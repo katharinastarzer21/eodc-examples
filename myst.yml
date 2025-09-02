@@ -48,7 +48,7 @@ project:
             - file: demos/S2/indices.ipynb
         - title: STAC
           children:
-            - file: demos/STAC/python-stac_AnalyzingMetadata.ipynb
+            # - file: demos/STAC/python-stac_AnalyzingMetadata.ipynb
             - file: demos/STAC/python-stac_DataDiscovery.ipynb
             - file: demos/STAC/python-stac_LoadDataXarray.ipynb
         - title: Workspaces
