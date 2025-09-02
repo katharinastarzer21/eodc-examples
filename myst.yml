@@ -4,16 +4,16 @@ project:
   toc:
     - file: index.md
     - title: Tutorials
-      file: tutorials\gallery.md
+      file: tutorials/gallery.md
       children:
-        - file: tutorials\AI4SAR_access_data.ipynb
-        - file: tutorials\eodc_sdk_argo.ipynb
-        - file: tutorials\Ground_Motion_WFS.ipynb
-        - file: tutorials\read_yipeeo_data.ipynb
-        - file: tutorials\sen2like.ipynb
-        - file: tutorials\sen2like-ndvi.ipynb
-        - file: tutorials\Sentinel-2.ipynb
-        - file: tutorials\wetland-explorer.ipynb
+        - file: tutorials/AI4SAR_access_data.ipynb
+        - file: tutorials/eodc_sdk_argo.ipynb
+        - file: tutorials/Ground_Motion_WFS.ipynb
+        - file: tutorials/read_yipeeo_data.ipynb
+        - file: tutorials/sen2like.ipynb
+        - file: tutorials/sen2like-ndvi.ipynb
+        - file: tutorials/Sentinel-2.ipynb
+        - file: tutorials/wetland-explorer.ipynb
     - title: Demos
       children:
         - file: demos\dask.ipynb
