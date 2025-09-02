@@ -1,0 +1,83 @@
+# See docs at: https://mystmd.org/guide/frontmatter
+version: 1
+project:
+  # id: f5bb69e9-4362-4203-af97-63c5b44c426c
+  title: EODC Notebook Gallery
+  # description:
+  # keywords: []
+  # authors: []
+  # github: https://github.com/koenifra/eodc-examples
+  # To autogenerate a Table of Contents, run "myst init --write-toc"
+  toc:
+    - file: index.md
+    - title: Tutorials
+      file: tutorials\gallery.md
+      children:
+        - file: tutorials\AI4SAR_access_data.ipynb
+        - file: tutorials\eodc_sdk_argo.ipynb
+        - file: tutorials\Ground_Motion_WFS.ipynb
+        - file: tutorials\read_yipeeo_data.ipynb
+        - file: tutorials\sen2like.ipynb
+        - file: tutorials\sen2like-ndvi.ipynb
+        - file: tutorials\Sentinel-2.ipynb
+        - file: tutorials\wetland-explorer.ipynb
+    - title: Demos
+      children:
+        - file: demos\dask.ipynb
+        - file: demos\python-csw.ipynb
+        - title: ASAR
+          children:
+            - file: demos\ASAR\ASAR_data_access.ipynb
+            - file: demos\ASAR\ENVISAT_OpenEO.ipynb
+        - title: Cloud4geo Webinar
+          file: demos\cloud4geo_webinar\landing.ipynb
+          children:
+            - file: demos\cloud4geo_webinar\python-stac.ipynb
+            - file: demos\cloud4geo_webinar\python-stac-xarray.ipynb
+        - title: Eo Mqs
+          children:
+            - file: demos\eo-mqs\1-EO-MQS_DataDiscovery.ipynb
+            - file: demos\eo-mqs\2-Simple-Metadata-Analysis.ipynb
+            - file: demos\eo-mqs\3-Load-STAC-Items-xarray.ipynb
+        - title: GFM
+          children:
+            - file: demos\GFM\download_gfm_python.ipynb
+            - file: demos\GFM\gfm_dask_objectstorage.ipynb
+            - file: demos\GFM\gfm_filter.ipynb
+            - file: demos\GFM\gfm_maximum_flood_extent_dask.ipynb
+            - file: demos\GFM\gfm_maximum_flood_extent_local.ipynb
+            - file: demos\GFM\gfm_maximum_flood_extent_simple_plot.ipynb
+            - file: demos\GFM\gfm_maximum_flood_extent_stac.ipynb
+            - file: demos\GFM\gfm_plot_flood_scene.ipynb
+            - file: demos\GFM\gfm_rfm_evaluation.ipynb
+        - title: S2
+          children:
+            - file: demos\S2\indices.ipynb
+        - title: STAC
+          children:
+            - file: demos\STAC\python-stac_AnalyzingMetadata.ipynb
+            - file: demos\STAC\python-stac_DataDiscovery.ipynb
+            - file: demos\STAC\python-stac_LoadDataXarray.ipynb
+        - title: Workspaces
+          children:
+            - file: demos\workspaces\demo-create-workspace.ipynb
+            - file: demos\workspaces\demo-load-data.ipynb
+            - file: demos\workspaces\demo-register-user.ipynb
+            - file: demos\workspaces\demo-register-workspace.ipynb
+            - file: demos\workspaces\demo-save-results.ipynb
+            - file: demos\workspaces\demo-share-workspace.ipynb
+            - file: demos\workspaces\demo-show-files.ipynb
+            - file: demos\workspaces\demo-stac-modify.ipynb
+            - file: demos\workspaces\demo-workspace-providers.ipynb
+            - file: demos\workspaces\README.md
+    
+site:
+  template: book-theme
+  options:
+    style: style/custom.css
+    favicon: style/eodc_logo.ico
+    logo: style/eodc_logo_descr.png
+    hide_footer_links: true
+    hide_outline: true
+  parts:
+    footer: footer.md
