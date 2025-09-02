@@ -1,13 +1,6 @@
-# See docs at: https://mystmd.org/guide/frontmatter
 version: 1
 project:
-  # id: f5bb69e9-4362-4203-af97-63c5b44c426c
   title: EODC Notebook Gallery
-  # description:
-  # keywords: []
-  # authors: []
-  # github: https://github.com/koenifra/eodc-examples
-  # To autogenerate a Table of Contents, run "myst init --write-toc"
   toc:
     - file: index.md
     - title: Tutorials
