@@ -23,8 +23,8 @@ project:
             - file: demos/ASAR/ASAR_data_access.ipynb
             - file: demos/ASAR/ENVISAT_OpenEO.ipynb
         - title: Cloud4geo Webinar
-          file: demos/cloud4geo_webinar/landing.ipynb
           children:
+            - file: demos/cloud4geo_webinar/landing.ipynb
             - file: demos/cloud4geo_webinar/python-stac.ipynb
             - file: demos/cloud4geo_webinar/python-stac-xarray.ipynb
         - title: Eo Mqs
