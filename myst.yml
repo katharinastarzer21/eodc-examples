@@ -4,7 +4,7 @@ project:
   toc:
     - file: index.md
     - title: Tutorials
-      file: tutorials/gallery.md
+      file: galleries/tutorials.md
       children:
         - file: tutorials/AI4SAR_access_data.ipynb
         - file: tutorials/eodc_sdk_argo.ipynb
