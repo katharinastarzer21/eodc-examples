@@ -1,57 +1,40 @@
-name: Deploy GitHub Pages (MyST)
 
+name: MyST GitHub Pages Deploy
 on:
   push:
-    branches: [ main ]   # ggf. anpassen
-  workflow_dispatch:
+    # Runs on pushes targeting the default branch
+    branches: [main]
+env:
+  # `BASE_URL` determines, relative to the root of the domain, the URL that your site is served from.
+  # E.g., if your site lives at `https://mydomain.org/myproject`, set `BASE_URL=/myproject`.
+  # If, instead, your site lives at the root of the domain, at `https://mydomain.org`, set `BASE_URL=''`.
+  BASE_URL: /${{ github.event.repository.name }}
 
-# Erforderlich für Pages + OIDC
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
-
-# Verhindert parallele Deploys
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
-  group: "pages"
-  cancel-in-progress: true
-
+  group: 'pages'
+  cancel-in-progress: false
 jobs:
-  build:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      - uses: actions/setup-node@v4
         with:
-          node-version: 22
-
-      - name: Checkout MyST repo (PR branch)
-        uses: actions/checkout@v4
-        with:
-          repository:  katharinastarzer21/mystmd_hidden # temporary solution, once mystmd push their newest version --> change
-          ref: feat/prototype-hidden-in-html
-          path: mystmd
-
-      - name: Cache mystmd node_modules
-        uses: actions/cache@v4
-        with:
-          path: mystmd/node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('mystmd/package-lock.json') }}
-          restore-keys: ${{ runner.os }}-node-
-
-      - name: Install & build MyST
-        working-directory: mystmd
-        run: |
-          npm ci
-          npm run build
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.10'
-
+          node-version: 18.x
+      - name: Install MyST Markdown
+        run: npm install -g mystmd
       - name: Build HTML Assets
         run: myst build --html
       - name: Upload artifact
