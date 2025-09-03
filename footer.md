@@ -15,14 +15,14 @@
   </div>
 
   <div style="text-align: center;">
-  <span style="color: #40bee0;">2025</span> <span style="color: #40bee0;">© All Rights Reserved.</span>
+  <span style="color: #083a59">2025</span> <span style="color: #083a59;">© All Rights Reserved.</span>
 </div>
   <div style="display: flex; gap: 0.75rem; #flex-wrap: wrap; justify-content: center;">
-    <a href="https://eodc.eu/" style="color: #40bee0; text-decoration: none;">About us</a> |
-    <a href="https://eodc.eu/contact/" style="color: #40bee0; text-decoration: none;">Contact</a> |
-    <a href="https://eodc.eu/dataprotection/" style="color: #40bee0; text-decoration: none;">Data protection</a> |
-    <a href="https://eodc.eu/imprint/" style="color: #40bee0; text-decoration: none;">Imprint</a> |
-    <a href="https://eodc.eu/disclaimer/" style="color: #40bee0; text-decoration: none;">Disclaimer</a> 
+    <a href="https://eodc.eu/" style="color: #083a59; text-decoration: none;">About us</a> |
+    <a href="https://eodc.eu/contact/" style="color: #083a59; text-decoration: none;">Contact</a> |
+    <a href="https://eodc.eu/dataprotection/" style="color: #083a59; text-decoration: none;">Data protection</a> |
+    <a href="https://eodc.eu/imprint/" style="color: #083a59; text-decoration: none;">Imprint</a> |
+    <a href="https://eodc.eu/disclaimer/" style="color: #083a59; text-decoration: none;">Disclaimer</a> 
   </div>
 </div>
 

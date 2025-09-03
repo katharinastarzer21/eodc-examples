@@ -92,7 +92,7 @@ footer.footer {
 .footer {
   flex-shrink: 0;
   background: #737b8d;
-  color: white;
+  color: #083a59;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: 2rem;
@@ -111,7 +111,7 @@ footer.footer {
 }
 
 .footer a {
-  color: #BAE3FA !important;
+  color: #083a59 !important;
   text-decoration: none;
 }
 
