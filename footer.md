@@ -15,7 +15,7 @@
   </div>
 
   <div style="text-align: center;">
-  <span style="color: #BAE3FA;">2025</span> <span style="color: #BAE3FA;">© All Rights Reserved.</span>
+  <span style="color: #40bee0;">2025</span> <span style="color: #BAE3FA;">© All Rights Reserved.</span>
 </div>
   <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center;">
     <a href="https://eodc.eu/" style="color: #BAE3FA; text-decoration: none;">About us</a> |
