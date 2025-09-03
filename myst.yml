@@ -15,6 +15,7 @@ project:
         - file: tutorials/Sentinel-2.ipynb
         - file: tutorials/wetland-explorer.ipynb
     - title: Demos
+      file: galleries/demos.md
       children:
         - file: demos/dask.ipynb
         - file: demos/python-csw.ipynb
