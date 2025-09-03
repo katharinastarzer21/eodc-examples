@@ -1,4 +1,4 @@
-# tutorials Gallery
+# Tutorials Gallery
 
 ### Filter Notebooks by Tags
 <div style="display: flex; flex-direction: column; gap: 20px; max-width: 800px;">
