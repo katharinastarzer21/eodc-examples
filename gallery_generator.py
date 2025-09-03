@@ -43,14 +43,23 @@ def generate_html_card(meta, notebook_path):
     tags = meta.get("tags", [])
     tags_html = ''.join(f'<span class="tag">{tag}</span>' for tag in tags)
 
+    # Link zum Notebook normalisieren (kein Präfix bei absoluten URLs)
     href = notebook_path.replace("\\", "/")
-    if not href.startswith("../"):
+    if not (href.startswith("../") or href.startswith("http://") or href.startswith("https://")):
         href = f"../{href}"
 
-    thumbnail = meta.get("thumbnail", "")
-    if "img/" in thumbnail:
-        thumbnail = thumbnail.split("img/", 1)[1].lstrip("/")
+    # Thumbnail-Logik:
+    # - Wenn http(s), genau so übernehmen.
+    # - Wenn "img/" enthalten, relativ zu ../img/ mappen (wie bisher).
+    # - Sonst unverändert lassen (falls bereits ein relativer Pfad ist).
+    thumb_raw = (meta.get("thumbnail") or "").strip()
+    if thumb_raw.startswith(("http://", "https://")):
+        thumbnail = thumb_raw
+    elif "img/" in thumb_raw:
+        thumbnail = thumb_raw.split("img/", 1)[1].lstrip("/")
         thumbnail = f"../img/{thumbnail}"
+    else:
+        thumbnail = thumb_raw
 
     return f'''
 <div class="notebook-card" data-tags="{' '.join(tags)}" style="display: flex; align-items: flex-start; border: 1px solid #cddff1; border-radius: 6px; padding: 14px 20px; background-color: #f9fbfe; box-shadow: 1px 1px 4px #dfeaf5;">
