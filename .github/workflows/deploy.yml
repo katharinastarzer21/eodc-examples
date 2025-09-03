@@ -26,12 +26,32 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: 'npm'
+          node-version: 22
 
-      - name: Install MyST Markdown CLI
-        run: npm i -g mystmd
-      
+      - name: Checkout MyST repo (PR branch)
+        uses: actions/checkout@v4
+        with:
+          repository:  katharinastarzer21/mystmd_hidden # temporary solution, once mystmd push their newest version --> change
+          ref: feat/prototype-hidden-in-html
+          path: mystmd
+
+      - name: Cache mystmd node_modules
+        uses: actions/cache@v4
+        with:
+          path: mystmd/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('mystmd/package-lock.json') }}
+          restore-keys: ${{ runner.os }}-node-
+
+      - name: Install & build MyST
+        working-directory: mystmd
+        run: |
+          npm ci
+          npm run build
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
       - name: Build HTML Assets
         run: myst build --html
       - name: Upload artifact
@@ -39,12 +59,6 @@ jobs:
         with:
           path: './_build/html'
 
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
+      - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
