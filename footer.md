@@ -11,7 +11,7 @@
 ">
 
   <div style="display: flex; align-items: center;">
-    <img src='style/eodc_logo_white.png' alt='DEDL Logo' style="height: 10px; margin-right: 12px;">
+    <img src='style/eodc_logo_dark.png' alt='DEDL Logo' style="height: 10px; margin-right: 12px;">
   </div>
 
   <div style="text-align: center;">
