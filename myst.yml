@@ -2,10 +2,8 @@ version: 1
 project:
   title: EODC Knowledgebase & Notebook Gallery
   toc:
-    # Landing
     - file: index.md
 
-    # --- Overview ---
     - title: Overview
       children:
         - file: source/overview/about.md
@@ -13,7 +11,6 @@ project:
         - file: source/overview/support.md
         - file: source/overview/acube.md
 
-    # --- Services (service-basiert) ---
     - title: Services
       children:
         - title: STAC
@@ -41,16 +38,10 @@ project:
         - title: Chiller
           file: source/services/chiller.md
 
-    # --- Tutorials (cross-service How-tos & Videos) ---
     - title: Tutorials
       children:
-        # Deine neue Übergangsseite mit den Webinaren:
         - file: source/tutorials/video-tutorials.md
 
-        # (Weitere KB-Tutorial-Seiten kannst du hier ergänzen,
-        # z. B. save-data-in-object-store.md, stac-assets-download.md, etc.)
-
-    # --- Notebook Gallery (bestehende Ordner bleiben gleich) ---
     - title: Gallery
       children:
         - title: Tutorials (Notebooks)
@@ -80,15 +71,13 @@ project:
                 - file: demos/cloud4geo_webinar/landing.ipynb
                 - file: demos/cloud4geo_webinar/python-stac-xarray.ipynb
                 - file: demos/cloud4geo_webinar/python-stac.ipynb
-
-            # EO-MQS
+    
             - title: eo-mqs
               children:
                 - file: demos/eo-mqs/1-EO-MQS_DataDiscovery.ipynb
                 - file: demos/eo-mqs/2-Simple-Metadata-Analysis.ipynb
                 - file: demos/eo-mqs/3-Load-STAC-Items-xarray.ipynb
 
-            # GFM (nur die wichtigsten; bei Bedarf erweitern)
             - title: GFM
               children:
                 - file: demos/GFM/download_gfm_python.ipynb
@@ -96,18 +85,15 @@ project:
                 - file: demos/GFM/gfm_plot_flood_scene.ipynb
                 - file: demos/GFM/gfm_evaluation.ipynb
 
-            # S2
             - title: S2
               children:
                 - file: demos/S2/indices.ipynb
 
-            # STAC
             - title: STAC
               children:
                 - file: demos/STAC/python-stac_DataDiscovery.ipynb
                 - file: demos/STAC/python-stac_LoadDataXarray.ipynb
 
-            # Workspaces (Auswahl)
             - title: workspaces
               children:
                 - file: demos/workspaces/demo-create-workspace.ipynb
@@ -116,14 +102,6 @@ project:
                 - file: demos/workspaces/demo-share-workspace.ipynb
                 - file: demos/workspaces/demo-show-files.ipynb
                 - file: demos/workspaces/demo-modify.ipynb
-
-            # Sonstiges / Root-Demos
-            - file: demos/dask.ipynb
-
-    # --- Developer Guides ---
-    - title: Developer Guides
-      children:
-        - file: source/developers/openeo-processes.md
 
     
 site:
