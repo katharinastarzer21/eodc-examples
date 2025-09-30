@@ -1,69 +1,130 @@
 version: 1
 project:
-  title: EODC Notebook Gallery
+  title: EODC Knowledgebase & Notebook Gallery
   toc:
+    # Landing
     - file: index.md
-    - title: Tutorials
-      file: galleries/tutorials.md
+
+    # --- Overview ---
+    - title: Overview
       children:
-        - file: tutorials/AI4SAR_access_data.ipynb
-        - file: tutorials/eodc_sdk_argo.ipynb
-        - file: tutorials/Ground_Motion_WFS.ipynb
-        - file: tutorials/read_yipeeo_data.ipynb
-        - file: tutorials/sen2like.ipynb
-        - file: tutorials/sen2like-ndvi.ipynb
-        - file: tutorials/Sentinel-2.ipynb
-        - file: tutorials/wetland-explorer.ipynb
-    - title: Demos
-      file: galleries/demos.md
+        - file: source/overview/about.md
+        - file: source/overview/funding.md
+        - file: source/overview/support.md
+        - file: source/overview/acube.md
+
+    # --- Services (service-basiert) ---
+    - title: Services
       children:
-        - file: demos/dask.ipynb
-        - file: demos/python-csw.ipynb
-        - title: ASAR
-          children:
-            - file: demos/ASAR/ASAR_data_access.ipynb
-            - file: demos/ASAR/ENVISAT_OpenEO.ipynb
-        - title: Cloud4geo Webinar
-          children:
-            - file: demos/cloud4geo_webinar/landing.ipynb
-            - file: demos/cloud4geo_webinar/python-stac.ipynb
-            - file: demos/cloud4geo_webinar/python-stac-xarray.ipynb
-        - title: Eo Mqs
-          children:
-            - file: demos/eo-mqs/1-EO-MQS_DataDiscovery.ipynb
-            - file: demos/eo-mqs/2-Simple-Metadata-Analysis.ipynb
-            - file: demos/eo-mqs/3-Load-STAC-Items-xarray.ipynb
-        - title: GFM
-          children:
-            - file: demos/GFM/download_gfm_python.ipynb
-            - file: demos/GFM/gfm_dask_objectstorage.ipynb
-            - file: demos/GFM/gfm_filter.ipynb
-            - file: demos/GFM/gfm_maximum_flood_extent_dask.ipynb
-            - file: demos/GFM/gfm_maximum_flood_extent_local.ipynb
-            - file: demos/GFM/gfm_maximum_flood_extent_simple_plot.ipynb
-            - file: demos/GFM/gfm_maximum_flood_extent_stac.ipynb
-            - file: demos/GFM/gfm_plot_flood_scene.ipynb
-            - file: demos/GFM/gfm_rfm_evaluation.ipynb
-        - title: S2
-          children:
-            - file: demos/S2/indices.ipynb
         - title: STAC
+          file: source/services/stac.md
+        - title: Dask Gateway
+          file: source/services/dask.md
+        - title: Object Store
+          file: source/services/objectstore.md
+        - title: OpenEO
+          file: source/services/openeo.md
+        - title: PyGeoAPI
+          file: source/services/pygeoapi.md
+        - title: OpenStack
+          file: source/services/openstack.md
           children:
-            # - file: demos/STAC/python-stac_AnalyzingMetadata.ipynb
-            - file: demos/STAC/python-stac_DataDiscovery.ipynb
-            - file: demos/STAC/python-stac_LoadDataXarray.ipynb
-        - title: Workspaces
+            - file: source/openstack/general.md
+            - file: source/openstack/distributions.md
+            - file: source/openstack/loadbalancers.md
+        - title: Argo Workflows
+          file: source/services/argo-workflows.md
+        - title: HPC
+          file: source/services/hpc.md
+        - title: CSW
+          file: source/services/csw.md
+        - title: Chiller
+          file: source/services/chiller.md
+
+    # --- Tutorials (cross-service How-tos & Videos) ---
+    - title: Tutorials
+      children:
+        # Deine neue Übergangsseite mit den Webinaren:
+        - file: source/tutorials/video-tutorials.md
+
+        # (Weitere KB-Tutorial-Seiten kannst du hier ergänzen,
+        # z. B. save-data-in-object-store.md, stac-assets-download.md, etc.)
+
+    # --- Notebook Gallery (bestehende Ordner bleiben gleich) ---
+    - title: Gallery
+      children:
+        - title: Tutorials (Notebooks)
+          file: galleries/tutorials.md
           children:
-            - file: demos/workspaces/demo-create-workspace.ipynb
-            - file: demos/workspaces/demo-load-data.ipynb
-            - file: demos/workspaces/demo-register-user.ipynb
-            - file: demos/workspaces/demo-register-workspace.ipynb
-            - file: demos/workspaces/demo-save-results.ipynb
-            - file: demos/workspaces/demo-share-workspace.ipynb
-            - file: demos/workspaces/demo-show-files.ipynb
-            - file: demos/workspaces/demo-stac-modify.ipynb
-            - file: demos/workspaces/demo-workspace-providers.ipynb
-            - file: demos/workspaces/README.md
+            - file: tutorials/AI4SAR_access_data.ipynb
+            - file: tutorials/eodc_sdk_argo.ipynb
+            - file: tutorials/Ground_Motion_WFS.ipynb
+            - file: tutorials/read_yipeeo_data.ipynb
+            - file: tutorials/sen2like.ipynb
+            - file: tutorials/sen2like-ndvi.ipynb
+            - file: tutorials/Sentinel-2.ipynb
+            - file: tutorials/wetland-explorer.ipynb
+
+        - title: Demos (Notebooks)
+          file: galleries/demos.md
+          children:
+            # ASAR
+            - title: ASAR
+              children:
+                - file: demos/ASAR/ASAR_data_access.ipynb
+                - file: demos/ASAR/ENVISAT_OpenEO.ipynb
+
+            # Cloud4Geo Webinar
+            - title: cloud4geo_webinar
+              children:
+                - file: demos/cloud4geo_webinar/landing.ipynb
+                - file: demos/cloud4geo_webinar/python-stac-xarray.ipynb
+                - file: demos/cloud4geo_webinar/python-stac.ipynb
+
+            # EO-MQS
+            - title: eo-mqs
+              children:
+                - file: demos/eo-mqs/1-EO-MQS_DataDiscovery.ipynb
+                - file: demos/eo-mqs/2-Simple-Metadata-Analysis.ipynb
+                - file: demos/eo-mqs/3-Load-STAC-Items-xarray.ipynb
+
+            # GFM (nur die wichtigsten; bei Bedarf erweitern)
+            - title: GFM
+              children:
+                - file: demos/GFM/download_gfm_python.ipynb
+                - file: demos/GFM/gfm_filter.ipynb
+                - file: demos/GFM/gfm_plot_flood_scene.ipynb
+                - file: demos/GFM/gfm_evaluation.ipynb
+
+            # S2
+            - title: S2
+              children:
+                - file: demos/S2/indices.ipynb
+
+            # STAC
+            - title: STAC
+              children:
+                - file: demos/STAC/python-stac_DataDiscovery.ipynb
+                - file: demos/STAC/python-stac_LoadDataXarray.ipynb
+
+            # Workspaces (Auswahl)
+            - title: workspaces
+              children:
+                - file: demos/workspaces/demo-create-workspace.ipynb
+                - file: demos/workspaces/demo-load-data.ipynb
+                - file: demos/workspaces/demo-register-user.ipynb
+                - file: demos/workspaces/demo-share-workspace.ipynb
+                - file: demos/workspaces/demo-show-files.ipynb
+                - file: demos/workspaces/demo-modify.ipynb
+
+            # Sonstiges / Root-Demos
+            - file: demos/dask.ipynb
+
+    # --- Developer Guides ---
+    - title: Developer Guides
+      children:
+        - file: source/developers/openeo-processes.md
+
     
 site:
   template: book-theme
